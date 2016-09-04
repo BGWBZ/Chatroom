@@ -1,0 +1,22 @@
+script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js')
+script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js')
+script(src='/javascripts/app.js')
+script(src='/javascripts/controllers.js')
+script(src='/javascripts/socket.io.js')
+//script(src='/javascripts/services.js')
+doctype html
+html(lang='en', ng-app='Chatroom')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css') 
+    title #{title}
+  body(ng-controller='ChatroomCtrl')
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.navbar-header
+      a.navbar-brand(href='#/')= title
+    h2 Welcome to #{title}!
+    div(ng-include="'/partials/chat.html'" class='col-lg-9')
+    div(ng-include="'/partials/user.html'" class='col-lg-3')
+    //div(ng-view)

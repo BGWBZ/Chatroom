@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar-brand {
+	font-size:40px;
+}
+
+div.msgbox {
+	background:#ddd;
+	height:80%;
+	width:100%;
+	overflow: auto;
+}
+
+textarea {
+	resize:none;
+	height:10%;
+}
+
+button.send {
+	height:10%;
+}
+
+div{word-break:break-all;}
+div p{word-break;:break-all;}

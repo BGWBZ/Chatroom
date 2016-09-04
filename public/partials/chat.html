@@ -1,0 +1,13 @@
+<div ng-controller='ChatCtrl'>
+	<div>
+		<label class='col-md-6 paramline' style='font-weight: normal;'>Participants:{{data.users}}</label>
+		<label class='col-md-6 paramline' style='font-weight: normal;'>Onlookers:{{data.onlookers}}</label>
+		<div ng-mouse-wheel-up="wheelup()" class='msgbox' id='msgbox'>
+    		<p ng-repeat='msg in data.msg' style='{{distype(msg.User)}}'>{{disuser(msg.User)}}<span class='timespan'>({{distime(msg.Time)}}):</span>{{msg.Msg}}</p>
+ 		</div>
+ 		<div>
+ 		<textarea ng-model='data.text' class='col-md-11 paramline' maxlength='255' style='resize:none' ng-disabled='data.username.length==0'></textarea>
+ 		<button class='btn btn-default col-md-1 paramline send' ng-disabled='data.username.length==0||data.text.length==0' ng-click='send()'>Send</button>
+ 		</div>
+	</div>
+</div>

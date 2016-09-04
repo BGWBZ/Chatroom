@@ -1,0 +1,16 @@
+<div ng-controller='UserCtrl'>
+	<h2>Join us!</h2>
+	<div class='span5 col-md-12'>
+		<form name='form' novalidate ng-submit='submit()'>
+		<h3>Nickname:</h3>
+		<input type='text' name='username' required ng-minlength='3' ng-maxlength='10' class='form-control' ng-model='username'>
+		<div ng-show='form.$invalid||isused'>
+			<div ng-show='form.$error.required'><h5>Please enter nickname.</h5></div>
+			<div ng-show='form.$error.minlength'><h5>Nickname length no less than 3.</h5></div>
+			<div ng-show='form.$error.maxlength'><h5>Nickname length no more than 10.</h5></div>
+			<div ng-show='isused'><h5>Nickname has been used!</h5></div>
+	    </div>
+		<button class='btn btn-default' ng-click='submit();issubmit=true;' ng-disabled='form.$invalid'>Check&Submit</button>
+		</form>	
+	</div>
+</div>
